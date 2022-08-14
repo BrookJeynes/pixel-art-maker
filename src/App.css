@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.Square {
+  height: 40px;
+  width: 40px;
+  border-width: 0px;
+}
+
+.BorderedSquare {
+  height: 40px;
+  width: 40px;
+  border: 2px solid black;
+  margin-bottom: -2px;
+}
+
+.Canvas {
+  height: 100%;
+  border: 2px solid black;
+}
