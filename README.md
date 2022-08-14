@@ -1,5 +1,5 @@
 <p align="center">
-    <h1 align = "center">Pixel Art Maker - Create in React!</h1>
+    <h1 align = "center">Pixel Art Maker - Created in React!</h1>
 </p>
 <p align="center">
     Pixel Art Maker is a small website where you can create simple pixel art. This website is just a small project I decided to make to teach myself Typescript and better my ReactJS skills.
