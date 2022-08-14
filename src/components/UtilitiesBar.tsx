@@ -14,6 +14,7 @@ const UtilitiesBar = (props: any) => {
               refreshCanvas={props.refreshCanvas}
               border={true}
               icon={utility} 
+              direction='column'
             />
           )} 
         )

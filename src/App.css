@@ -12,12 +12,18 @@
 .BorderedSquare {
   height: 40px;
   width: 40px;
-  border: 2px solid black;
+  border: 2px solid black;  
+}
+
+.Row {
+  margin-right: -2px;
+}
+
+.Column {
   margin-bottom: -2px;
 }
 
 .Canvas {
-  height: 100%;
   border: 2px solid black;
 }
 

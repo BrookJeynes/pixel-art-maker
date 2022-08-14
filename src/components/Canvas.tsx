@@ -23,7 +23,7 @@ const Canvas = (props: any) => {
                     key={key} 
                     selectedColour={props.selectedColour} 
                     selectedUtility={props.selectedUtility} 
-                    colour={chooseColour(row, column)}  
+                    colour={chooseColour(row, column)}
                   />
                 )}
             </div>

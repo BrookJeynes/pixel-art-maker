@@ -38,9 +38,32 @@ const Square = (props: any) => {
     }
   }
 
+  const generateClasses = () => {
+    let className = "";
+
+    switch (props.direction) {
+      case "row":
+        className += " Row";
+        break;
+      case "column":
+        className += " Column";
+        break;
+      default:
+        break;
+    }
+
+    if (props.border) {
+      className += " BorderedSquare";
+    } else {
+      className += " Square";
+    }
+
+    return className;
+  }
+
   return (
     <button 
-      className={props.border ? "BorderedSquare" : "Square"} 
+      className={generateClasses()} 
       style={{backgroundColor: `${colour}`}}
       onClick={handleClick}
       disabled={props.disabled ? true : false}

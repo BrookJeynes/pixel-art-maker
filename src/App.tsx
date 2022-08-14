@@ -26,13 +26,20 @@ const App = () => {
   return (
     <div className="App">
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <Canvas
-          selectedColour={selectedColour}
-          selectedUtility={selectedUtility}
-          canvas={canvas}
-        />
+        <div style={{ display: "flex", flexDirection: "column", alignItems: 'start' }}>
+          <Canvas
+            selectedColour={selectedColour}
+            selectedUtility={selectedUtility}
+            canvas={canvas}
+          />
 
-        <div style={{ marginRight: 40 }} />
+          <DefaultColours
+            selectedColour={selectedColour}
+            setSelectedColor={setSelectedColour}
+          />
+        </div>
+
+        <div style={{ marginRight: 20 }} />
 
         <div>
           <div
@@ -43,10 +50,7 @@ const App = () => {
               alignItems: "start",
             }}
           >
-            <DefaultColours
-              selectedColour={selectedColour}
-              setSelectedColor={setSelectedColour}
-            />
+            
 
             <div style={{ marginLeft: 10 }}>
               <UtilitiesBar
@@ -86,7 +90,12 @@ const App = () => {
               >
                 <div style={{ marginRight: 10 }}>Current Colour:</div>
 
-                <Square colour={selectedColour} disabled={true} border={true} />
+                <Square 
+                  colour={selectedColour} 
+                  disabled={true} 
+                  border={true} 
+                  direction='column'
+                />
               </div>
 
               <div
