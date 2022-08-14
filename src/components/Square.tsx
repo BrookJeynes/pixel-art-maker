@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { returnIcon } from '../utilities/returnIcon';
-import { colours, utilities } from '../utilities/defaults';
+import { colours } from '../utilities/defaults';
 
 const Square = (props: any) => {
   const defaultColour = props.colour;
@@ -9,26 +9,16 @@ const Square = (props: any) => {
   const [colour, setColour] = useState(props.colour);
 
   useEffect(() => {
+    if (colours[props.colour]) {
+      setColour(colours[props.colour]);
+      return;
+    }
+
     setColour(props.colour);
   }, [props.colour]);
 
-  useEffect(() => {
-    if (colours[props.colour]) {
-      setColour(colours[props.colour]);
-    }
-
-    if (utilities[props.icon]) {
-      setColour(utilities[props.icon]);
-    }
-  }, []);
-
   const handleClick = () => {
     if (props.setSelectedUtility) {
-      if (utility === "Bomb") {
-
-        return;
-      }
-
       props.setSelectedUtility(utility)
       return;
     }

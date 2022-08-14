@@ -1,6 +1,6 @@
 import { range } from '../utilities/range';
 import Square from './Square';
-import { colours, utilities } from '../utilities/defaults';
+import { colours } from '../utilities/defaults';
 
 const Canvas = (props: any) => {
   const chooseColour = (row: number, column: number) => {
