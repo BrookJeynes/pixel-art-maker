@@ -137,6 +137,8 @@ const App = () => {
                 onSubmit={(e) => {
                   e.preventDefault();
 
+                  console.log(localCanvas)
+
                   setCanvas({
                     height: Number(localCanvas.height),
                     width: Number(localCanvas.width),
@@ -158,7 +160,7 @@ const App = () => {
                       onChange={(e) =>
                         setLocalCanvas({
                           ...localCanvas,
-                          width: e.target.value === "0" ? "1" : e.target.value,
+                          width: (!e.target.value || e.target.value === "0") ? "1" : e.target.value,
                         })
                       }
                       style={{ marginLeft: 10 }}
@@ -173,7 +175,7 @@ const App = () => {
                       onChange={(e) =>
                         setLocalCanvas({
                           ...localCanvas,
-                          height: e.target.value === "0" ? "1" : e.target.value,
+                          height: (!e.target.value || e.target.value === "0") ? "1" : e.target.value,
                         })
                       }
                       style={{ marginLeft: 10 }}
