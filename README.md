@@ -13,9 +13,11 @@
 - Custom and pre-defined colours
 - Paint colours onto the canvas
 - Erase colours painted on the canvas
+- Export image as 'PNG' (not transparent)
 
 ## Planned features:
-- Image export
+- Export other image formats
+- PNG transparency option
 - Better website design
 - Better website accessability (responsive sizing)
 - Save custom colours
