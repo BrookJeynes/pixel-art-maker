@@ -2,7 +2,7 @@
     <h1 align = "center">Pixel Art Maker - Create in React!</h1>
 </p>
 <p align="center">
-    Pixel Art Maker is a small website where you can create simple pixel art. This website is just a small project designated at teaching myself ReactJS and Typescript.
+    Pixel Art Maker is a small website where you can create simple pixel art. This website is just a small project I decided to make to teaching myself Typescript and better my ReactJS.
 </p>
  
 ![Blank canvas](./src/assets/readme/blank-canvas-example.png)
