@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
+import { toPng } from 'html-to-image'
 import "./App.css";
 
 import { ChromePicker } from "react-color";
@@ -12,6 +13,25 @@ const App = () => {
   const [selectedColour, setSelectedColour] = useState("#000");
   const [selectedUtility, setSelectedUtility] = useState("Brush");
   const [showColourPicker, setShowColourPicker] = useState(false);
+
+  const ref = useRef<HTMLDivElement>(null);
+  
+  const downloadPng = useCallback(() => {
+    if (ref.current === null) {
+      return
+    }
+
+    toPng(ref.current, { cacheBust: true, })
+      .then((dataUrl) => {
+        const link = document.createElement('a');
+        link.download = 'canvas.png';
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [ref]);
 
   const [canvas, setCanvas] = useState({
     height: 10,
@@ -27,11 +47,13 @@ const App = () => {
     <div className="App">
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: 'start' }}>
-          <Canvas
-            selectedColour={selectedColour}
-            selectedUtility={selectedUtility}
-            canvas={canvas}
-          />
+          <div ref={ref}>
+            <Canvas
+              selectedColour={selectedColour}
+              selectedUtility={selectedUtility}
+              canvas={canvas}
+            />
+          </div>
 
           <DefaultColours
             selectedColour={selectedColour}
@@ -183,12 +205,18 @@ const App = () => {
                     />
                     <input
                       type="submit"
-                      value="Submit"
+                      value="Update"
                       style={{ marginLeft: 10 }}
                     />
                   </div>
                 </div>
               </form>
+
+              <div style={{ marginTop: 20 }} />
+
+              <button onClick={downloadPng}>
+                Download as PNG (Not transparent yet)
+              </button>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { range } from '../utilities/range';
 import Square from './Square';
 import { colours } from '../utilities/defaults';
 
+
 const Canvas = (props: any) => {
   const chooseColour = (row: number, column: number) => {
     if ((column % 2 === 0 && row % 2 !== 0) || (column % 2 !== 0 && row % 2 === 0)) {
