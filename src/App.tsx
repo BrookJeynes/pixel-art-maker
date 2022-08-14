@@ -50,8 +50,6 @@ const App = () => {
               alignItems: "start",
             }}
           >
-            
-
             <div style={{ marginLeft: 10 }}>
               <UtilitiesBar
                 selectedUtility={selectedUtility}
@@ -137,7 +135,10 @@ const App = () => {
                 onSubmit={(e) => {
                   e.preventDefault();
 
-                  console.log(localCanvas)
+                  setLocalCanvas({
+                    height: (!localCanvas.height || localCanvas.height === "0") ? "1" : localCanvas.height,
+                    width: (!localCanvas.width || localCanvas.width === "0") ? "1" : localCanvas.width,
+                  }); 
 
                   setCanvas({
                     height: (!localCanvas.height || localCanvas.height === "0") ? 1 : Number(localCanvas.height),
