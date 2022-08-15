@@ -1,15 +1,10 @@
 import React, { useCallback } from "react";
 import { toPng } from 'html-to-image'
 
-
 const DownloadImage = (props: any) => {
   const ref = props.componentReference;
 
   const downloadPng = useCallback(() => {
-    if (ref.current === null) {
-      return;
-    }
-
     toPng(ref.current, { cacheBust: true, })
       .then((dataUrl) => {
         const link = document.createElement('a');
@@ -22,8 +17,23 @@ const DownloadImage = (props: any) => {
       })
   }, [ref]);
 
+  const handleClick = (fileFormat: string) => {
+    if (ref.current === null) {
+      return;
+    }
+
+    switch (fileFormat) {
+      case 'PNG':
+        downloadPng();
+        break;
+      default:
+        console.log('Unsupported type');
+        break;
+    }
+  }
+
   return (
-    <button onClick={downloadPng}>
+    <button onClick={() => handleClick('PNG')}>
       Download as PNG (Not transparent yet)
     </button>
   )

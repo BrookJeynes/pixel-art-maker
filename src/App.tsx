@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 
 import { ChromePicker } from "react-color";
