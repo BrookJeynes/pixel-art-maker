@@ -1,5 +1,4 @@
 import React, { useState, useRef, useCallback } from "react";
-import { toPng } from 'html-to-image'
 import "./App.css";
 
 import { ChromePicker } from "react-color";
@@ -8,6 +7,7 @@ import Square from "./components/Square";
 import Canvas from "./components/Canvas";
 import DefaultColours from "./components/DefaultColours";
 import UtilitiesBar from "./components/UtilitiesBar";
+import DownloadImage from "./components/DownloadImage";
 
 const App = () => {
   const [selectedColour, setSelectedColour] = useState("#000");
@@ -15,23 +15,6 @@ const App = () => {
   const [showColourPicker, setShowColourPicker] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
-  
-  const downloadPng = useCallback(() => {
-    if (ref.current === null) {
-      return
-    }
-
-    toPng(ref.current, { cacheBust: true, })
-      .then((dataUrl) => {
-        const link = document.createElement('a');
-        link.download = 'canvas.png';
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [ref]);
 
   const [canvas, setCanvas] = useState({
     height: 10,
@@ -214,9 +197,7 @@ const App = () => {
 
               <div style={{ marginTop: 20 }} />
 
-              <button onClick={downloadPng}>
-                Download as PNG (Not transparent yet)
-              </button>
+              <DownloadImage componentReference={ref} />
             </div>
           </div>
         </div>
