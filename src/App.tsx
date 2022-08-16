@@ -13,6 +13,7 @@ const App = () => {
   const [selectedColour, setSelectedColour] = useState("#000");
   const [selectedUtility, setSelectedUtility] = useState("Brush");
   const [showColourPicker, setShowColourPicker] = useState(false);
+  const [squareScale, setSquareScale] = useState(4);
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -20,6 +21,8 @@ const App = () => {
     height: 10,
     width: 10,
   });
+
+  const [localSquareScale, setLocalSquareScale] = useState('4');
 
   const [localCanvas, setLocalCanvas] = useState({
     height: `${canvas.height}`,
@@ -35,6 +38,7 @@ const App = () => {
               selectedColour={selectedColour}
               selectedUtility={selectedUtility}
               canvas={canvas}
+              squareScale={squareScale}
             />
           </div>
 
@@ -140,6 +144,16 @@ const App = () => {
                 onSubmit={(e) => {
                   e.preventDefault();
 
+                  if (localSquareScale === '') {
+                    setSquareScale(4);
+                    setLocalSquareScale('4')
+                  } else if (Number(localSquareScale) <= 0) {
+                    setSquareScale(1);
+                    setLocalSquareScale('1')
+                  } else {
+                    setSquareScale(Number(localSquareScale));
+                  }
+
                   setLocalCanvas({
                     height: (!localCanvas.height || localCanvas.height === "0") ? "1" : localCanvas.height,
                     width: (!localCanvas.width || localCanvas.width === "0") ? "1" : localCanvas.width,
@@ -173,8 +187,8 @@ const App = () => {
                     />
                   </label>
 
-                  <div style={{ display: "flex", flexDirection: "row" }}>
-                    <label>Height: </label>
+                  <label>
+                    Height:
                     <input
                       type="text"
                       value={localCanvas.height}
@@ -183,6 +197,18 @@ const App = () => {
                           ...localCanvas,
                           height: e.target.value,
                         })
+                      }
+                      style={{ marginLeft: 10 }}
+                    />
+                  </label>
+
+                  <div style={{ display: "flex", flexDirection: "row" }}>
+                    <label>Scale: </label>
+                    <input
+                      type="text"
+                      value={localSquareScale}
+                      onChange={(e) =>
+                        setLocalSquareScale(e.target.value)
                       }
                       style={{ marginLeft: 10 }}
                     />

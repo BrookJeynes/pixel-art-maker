@@ -25,6 +25,7 @@ const Canvas = (props: any) => {
                     selectedColour={props.selectedColour} 
                     selectedUtility={props.selectedUtility} 
                     colour={chooseColour(row, column)}
+                    squareScale={props.squareScale}
                   />
                 )}
             </div>

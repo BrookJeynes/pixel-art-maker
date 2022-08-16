@@ -62,9 +62,13 @@ const Square = (props: any) => {
   }
 
   return (
-    <button 
+    <button
       className={generateClasses()} 
-      style={{backgroundColor: `${colour}`}}
+      style={{
+        backgroundColor: `${colour}`, 
+        height: props.squareScale ? `${10 * props.squareScale}px` : '40px',
+        width: props.squareScale ? `${10 * props.squareScale}px` : '40px'
+      }}
       onClick={handleClick}
       disabled={props.disabled ? true : false}
     >
