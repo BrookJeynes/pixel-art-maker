@@ -9,16 +9,20 @@
 ![Snail drawn on canvas](./src/assets/readme/snail-example.png)
 
 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    
 <h2>Current features:</h2>
+    
 <ul>
   <li>Resize pixel canvas</li>
   <li>Custom and pre-defined colours</li>
   <li>Paint colours onto the canvas</li>
   <li>Erase colours painted on the canvas</li>
   <li>Export image as 'PNG' (not transparent)</li>
-<ul>
+</ul>
 
 <h2>Planned features:</h2>
+    
+<ul>
   <li>Export other image formats</li>
   <li>PNG transparency option</li>
   <li>Better website design</li>
@@ -30,6 +34,7 @@
     <li>Clear canvas</li>
   </ul>
 </ul>
+    
 </div>
 
 ## Possible ideas:
