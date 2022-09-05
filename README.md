@@ -8,7 +8,9 @@
 ![Blank canvas](./src/assets/readme/blank-canvas-example.png)
 ![Snail drawn on canvas](./src/assets/readme/snail-example.png)
 
-<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+<br />
+
+<div style="display: flex; justify-content: center; align-items: center;">
     
 <h2>Current features:</h2>
     
