@@ -5,8 +5,8 @@
     Pixel Art Maker is a small website where you can create simple pixel art. This website is just a small project I decided to make to teach myself Typescript and better my ReactJS skills.
 </p>
  
-<img src="https://raw.githubusercontent.com/BrookJeynes/pixel-art-maker/main/src/assets/readme/blank-canvas-example.png" alt="Blank canvas example" />
-<img alt="Snail drawn on canvas" src="https://raw.githubusercontent.com/BrookJeynes/pixel-art-maker/main/src/assets/readme/snail-example.png" />
+<img src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/blank-canvas-example.png?raw=true" alt="Blank canvas example" />
+<img alt="Snail drawn on canvas" src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/snail-example.png?raw=true" />
 
 <br />
     
