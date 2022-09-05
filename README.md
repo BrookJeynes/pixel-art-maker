@@ -9,8 +9,6 @@
 ![Snail drawn on canvas](./src/assets/readme/snail-example.png)
 
 <br />
-
-<div style="display: flex; justify-content: center; align-items: center;">
     
 <h2>Current features:</h2>
     
@@ -21,6 +19,8 @@
   <li>Erase colours painted on the canvas</li>
   <li>Export image as 'PNG' (not transparent)</li>
 </ul>
+
+<br />
 
 <h2>Planned features:</h2>
     
@@ -36,8 +36,8 @@
     <li>Clear canvas</li>
   </ul>
 </ul>
-    
-</div>
+
+<br />
 
 ## Possible ideas:
 - Ability to animate
