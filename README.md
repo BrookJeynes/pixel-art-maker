@@ -6,11 +6,13 @@
 </p>
  
 <div align="center">
-  <img width="80%" src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/blank-canvas-example.png?raw=true" alt="Blank canvas example" />
+  <img src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/blank-canvas-example.png?raw=true" alt="Blank canvas example" />
 </div>
 
+<br />
+
 <div align="center">
-  <img width="80%" alt="Snail drawn on canvas" src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/snail-example.png?raw=true" />
+  <img alt="Snail drawn on canvas" src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/snail-example.png?raw=true" />
 </div>
     
 <br />
