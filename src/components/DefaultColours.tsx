@@ -3,7 +3,7 @@ import Square from './Square';
 
 const DefaultColours = (props: any) => {
   return (
-    <div style={{display: 'flex', flexDirection: 'row', marginTop: 20}}>
+    <div style={{display: 'flex', flexDirection: 'column', marginTop: 20}}>
       {
         Object.keys(colours).map((colour, key) => {
           return (

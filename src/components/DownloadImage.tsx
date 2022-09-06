@@ -1,6 +1,9 @@
 import React, { useCallback } from "react";
 import { toPng } from 'html-to-image'
 
+//import mui button from @mui/material
+import { Button } from '@mui/material';
+
 const DownloadImage = (props: any) => {
   const ref = props.componentReference;
 
@@ -33,9 +36,11 @@ const DownloadImage = (props: any) => {
   }
 
   return (
-    <button onClick={() => handleClick('PNG')}>
-      Download as PNG (Not transparent yet)
-    </button>
+    <div>
+      <Button variant="contained" color="primary" onClick={() => handleClick('PNG')}>
+        Download PNG
+      </Button>
+    </div>
   )
 }
 
