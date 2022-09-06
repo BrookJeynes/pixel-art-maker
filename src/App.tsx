@@ -30,12 +30,38 @@ const App = () => {
     width: 10,
   });
 
-  const [localSquareScale, setLocalSquareScale] = useState("4");
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
 
-  const [localCanvas, setLocalCanvas] = useState({
-    height: `${canvas.height}`,
-    width: `${canvas.width}`,
-  });
+    const canvasHeight = e.target.elements.canvasHeight.value;
+    const canvasWidth = e.target.elements.canvasWidth.value;
+    const canvasScale = e.target.elements.canvasScale.value; 
+
+    if (canvasScale === "" || Number(canvasScale) <= 0) {
+      setSquareScale(4);
+    } else {
+      setSquareScale(Number(canvasScale));
+    }
+
+    try {
+      if (Number(canvasHeight) > 0 && Number(canvasWidth) > 0) {
+        setCanvas({
+          height: Number(canvasHeight),
+          width: Number(canvasWidth),
+        });
+      } else {
+        setCanvas({
+          height: 10,
+          width: 10,
+        });
+      }
+    } catch (error) {
+      setCanvas({
+        height: 10,
+        width: 10
+      });
+    }   
+  };
 
   return (
     <div className="App">
@@ -49,7 +75,7 @@ const App = () => {
         >
           <Card sx={{ marginTop: "10px", padding: 2, justifyContent: "center" }}>
             <div style={{ justifyContent: "center" }}>
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ display: "flex", justifyContent: "center", alignItems: 'center' }}>
                 Selected Tool: {selectedUtility}
                 <div style={{ marginLeft: 78 }} />
                 <DownloadImage componentReference={ref} />
@@ -127,7 +153,7 @@ const App = () => {
                           marginTop: 30,
                         }}
                       >
-                        <div style={{ marginRight: 3 }}>Current Colour:</div>
+                        <div style={{ marginRight: 10 }}>Current Colour:</div>
 
                         <Square
                           colour={selectedColour}
@@ -178,43 +204,7 @@ const App = () => {
                     {/*=====================================================================================*/}
                     {/* TSX code for the Canvas Settings */}
                     <Card sx={{ padding: 3.9 }}>
-                      <form
-                        onSubmit={(e) => {
-                          e.preventDefault();
-
-                          if (localSquareScale === "") {
-                            setSquareScale(4);
-                            setLocalSquareScale("4");
-                          } else if (Number(localSquareScale) <= 0) {
-                            setSquareScale(1);
-                            setLocalSquareScale("1");
-                          } else {
-                            setSquareScale(Number(localSquareScale));
-                          }
-
-                          setLocalCanvas({
-                            height:
-                              !localCanvas.height || localCanvas.height === "0"
-                                ? "1"
-                                : localCanvas.height,
-                            width:
-                              !localCanvas.width || localCanvas.width === "0"
-                                ? "1"
-                                : localCanvas.width,
-                          });
-
-                          setCanvas({
-                            height:
-                              !localCanvas.height || localCanvas.height === "0"
-                                ? 1
-                                : Number(localCanvas.height),
-                            width:
-                              !localCanvas.width || localCanvas.width === "0"
-                                ? 1
-                                : Number(localCanvas.width),
-                          });
-                        }}
-                      >
+                      <form onSubmit={handleSubmit} >
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="h2">
                             Canvas Settings
@@ -239,13 +229,8 @@ const App = () => {
                             <div style={{ marginRight: 10 }}>Height</div>
                             <input
                               type="text"
-                              value={localCanvas.height}
-                              onChange={(e) =>
-                                setLocalCanvas({
-                                  ...localCanvas,
-                                  height: e.target.value,
-                                })
-                              }
+                              name="canvasHeight"
+                              placeholder={canvas.height.toString()}
                             />
                           </div>
                           <div
@@ -259,13 +244,8 @@ const App = () => {
                             <div style={{ marginRight: 10 }}>Width</div>
                             <input
                               type="text"
-                              value={localCanvas.width}
-                              onChange={(e) =>
-                                setLocalCanvas({
-                                  ...localCanvas,
-                                  width: e.target.value,
-                                })
-                              }
+                              name="canvasWidth"
+                              placeholder={canvas.width.toString()}
                             />
                           </div>
 
@@ -280,10 +260,8 @@ const App = () => {
                             <div style={{ marginRight: 10 }}>Scale</div>
                             <input
                               type="text"
-                              value={localSquareScale}
-                              onChange={(e) =>
-                                setLocalSquareScale(e.target.value)
-                              }
+                              name="canvasScale"
+                              placeholder="4"
                             />
                           </div>
 

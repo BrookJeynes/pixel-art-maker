@@ -13,7 +13,7 @@ const DefaultColours = (props: any) => {
               selectedColour={props.selectedColour} 
               setSelectedColour={props.setSelectedColor} 
               border={true} 
-              direction='row'
+              direction='column'
             />
           )}
         )
