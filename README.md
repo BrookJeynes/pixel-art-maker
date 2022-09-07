@@ -18,8 +18,6 @@
 ## Planned features:
 - Export other image formats
 - PNG transparency option
-- Better website design
-- Better website accessability (responsive sizing)
 - Save custom colours
 - More tools:
   - Bucket
