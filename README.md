@@ -5,46 +5,25 @@
     Pixel Art Maker is a small website where you can create simple pixel art. This website is just a small project I decided to make to teach myself Typescript and better my ReactJS skills.
 </p>
  
-<div align="center">
-  <img src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/blank-canvas-example.png?raw=true" alt="Blank canvas example" />
-</div>
-
-<br />
-
-<div align="center">
-  <img alt="Snail drawn on canvas" src="https://github.com/BrookJeynes/pixel-art-maker/blob/main/src/assets/readme/snail-example.png?raw=true" />
-</div>
+![Blank canvas](./src/assets/readme/blank-canvas-example.png)
+![Snail drawn on canvas](./src/assets/readme/snail-example.png)
     
-<br />
-    
-<h2>Current features:</h2>
-    
-<ul>
-  <li>Resize pixel canvas</li>
-  <li>Custom and pre-defined colours</li>
-  <li>Paint colours onto the canvas</li>
-  <li>Erase colours painted on the canvas</li>
-  <li>Export image as 'PNG' (not transparent)</li>
-</ul>
+## Current features:
+- Resize pixel canvas
+- Custom and pre-defined colours
+- Paint colours onto the canvas
+- Erase colours painted on the canvas
+- Export image as 'PNG' (not transparent)
 
-<br />
-
-<h2>Planned features:</h2>
-    
-<ul>
-  <li>Export other image formats</li>
-  <li>PNG transparency option</li>
-  <li>Better website design</li>
-  <li>Better website accessability (responsive sizing)</li>
-  <li>Save custom colours</li>
-  <li>More tools:</li>
-  <ul>
-    <li>Bucket</li>
-    <li>Clear canvas</li>
-  </ul>
-</ul>
-
-<br />
+## Planned features:
+- Export other image formats
+- PNG transparency option
+- Better website design
+- Better website accessability (responsive sizing)
+- Save custom colours
+- More tools:
+  - Bucket
+  - Clear canvas
 
 ## Possible ideas:
 - Ability to animate
